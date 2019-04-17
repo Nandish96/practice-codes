@@ -1,0 +1,27 @@
+//https://www.hackerrank.com/challenges/between-two-sets/problem
+
+static int getTotalX(int[] a, int[] b) 
+    {
+        int count = 0;
+        start:
+        for(int i = a[a.length-1] ; i<=b[0];i+=a[a.length-1])
+        {
+            for(int k:a)
+            {
+                if(i%k!=0)
+                {
+                    continue start;
+                }
+            }
+            for(int s:b)
+            {
+                if(s%i!=0)
+                {
+                    continue start;
+                }
+            }
+            count++;
+        }
+        return count;
+
+    }
